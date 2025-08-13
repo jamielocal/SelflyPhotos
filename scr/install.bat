@@ -1,6 +1,6 @@
 @echo off
 setlocal
-
+echo Install Script v2, dsc.gg/arizaltd
 REM Check if the directory already exists
 if exist "selflyphotos" (
   echo The 'selflyphotos' directory already exists. Skipping git clone.
