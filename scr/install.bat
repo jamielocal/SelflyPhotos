@@ -4,16 +4,17 @@ setlocal
 REM Check if the directory already exists
 if exist "selflyphotos" (
   echo The 'selflyphotos' directory already exists. Skipping git clone.
-  cd selflyphotos
+  cd selflyphotos\selfly
 ) else (
   REM Clone the repository
   echo Cloning the repository...
   git clone https://github.com/jamielocal/selflyphotos
-  cd selflyphotos
+  cd selflyphotos\selfly
 )
 
 REM Create a virtual environment
 echo Creating virtual environment...
+echo NOTE: Depending on your PC, it might take a bit for this step to Complete, just give it time and it will
 python -m venv venv
 
 REM Activate the virtual environment and install dependencies
