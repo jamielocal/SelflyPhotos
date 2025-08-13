@@ -10,12 +10,12 @@ To deploy this project run
 
 **Windows**
 
-``curl -o install.bat https://raw.githubusercontent.com/jamielocal/SelflyPhotos/refs/heads/master/scr/install.sh && install.bat
+``curl -o install.bat https://raw.githubusercontent.com/jamielocal/SelflyPhotos/refs/heads/master/scr/install.bat && install.bat
 ``
 
 **Linux** 
 
-``wget -O install.sh https://sor.bz/linuxselfly && chmod +x install.sh && ./install.sh``
+``wget -O install.sh https://raw.githubusercontent.com/jamielocal/SelflyPhotos/refs/heads/master/scr/install.sh && chmod +x install.sh && ./install.sh``
 
 **Manual**
 
