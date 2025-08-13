@@ -3,12 +3,12 @@
 # Check if the directory already exists
 if [ -d "selflyphotos" ]; then
   echo "The 'selflyphotos' directory already exists. Skipping git clone."
-  cd selflyphotos
+  cd selflyphotos/selfly
 else
   # Clone the repository
   echo "Cloning the repository..."
   git clone https://github.com/jamielocal/selflyphotos
-  cd selflyphotos
+  cd selflyphotos/selfly
 fi
 
 # Create and activate a virtual environment
