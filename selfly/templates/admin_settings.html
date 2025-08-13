@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Settings{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold">Admin Settings</h1>
+        <a href="{{ url_for('main.admin_dashboard') }}"
+            class="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600">Back to Admin Dashboard</a>
+    </div>
+
+    <div class="bg-gray-800 p-6 rounded-lg shadow-md max-w-lg mx-auto">
+        <h2 class="text-2xl font-bold mb-4">ImageBB API Key</h2>
+        <p class="text-gray-400 mb-4">Enter your ImageBB API key here to enable the public image upload feature. You can
+            get a free key from <a href="https://api.imgbb.com/" class="text-blue-400 hover:underline"
+                target="_blank">ImageBB's website</a>.</p>
+
+        <form action="{{ url_for('main.admin_settings') }}" method="post" class="space-y-4">
+            <div>
+                <label for="imagebb_api_key" class="block text-sm font-medium text-gray-300">API Key</label>
+                <input type="text" id="imagebb_api_key" name="imagebb_api_key" value="{{ current_api_key or '' }}"
+                    placeholder="Paste your API key here"
+                    class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <button type="submit"
+                class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Save
+                API Key</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a cleaner look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .media-grid {
+            display: grid;
+            gap: 1rem;
+            /* Spacing between grid items */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        .media-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .media-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .media-item img,
+        .media-item video {
+            width: 100%;
+            height: 250px;
+            /* Fixed height for consistent grid items */
+            object-fit: cover;
+            /* Ensures images fill the space without distortion */
+            display: block;
+        }
+
+        /* Style for the action buttons overlay */
+        .media-actions {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .media-item:hover .media-actions {
+            opacity: 1;
+        }
+
+        .media-actions a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0.375rem;
+            transition: background-color 0.2s;
+        }
+
+        .media-actions a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="{{ url_for('main.home') }}" class="text-2xl font-bold text-indigo-600">Selfly Photos</a>
+            <div class="flex items-center space-x-4">
+                {% if username %}
+                <span class="text-gray-600">Hello, <strong>{{ username }}</strong></span>
+                {% if is_admin %}
+                <a href="{{ url_for('main.admin_dashboard') }}" class="text-gray-600 hover:text-indigo-600">Admin</a>
+                {% endif %}
+                <a href="{{ url_for('main.upload_file') }}"
+                    class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200">
+                    Upload
+                </a>
+                <a href="{{ url_for('main.logout') }}" class="text-red-500 hover:text-red-700">Logout</a>
+                {% else %}
+                <a href="{{ url_for('main.login') }}" class="text-gray-600 hover:text-indigo-600">Login</a>
+                <a href="{{ url_for('main.signup') }}"
+                    class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200">
+                    Sign Up
+                </a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto mt-8 px-4 flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow-inner mt-8 py-4 text-center text-gray-500">
+        <p>&copy; 2025 jamie.local All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

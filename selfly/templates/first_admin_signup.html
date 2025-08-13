@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}First Admin Signup{% endblock %}
+
+{% block content %}
+<h2>Welcome! It looks like you're the first user.</h2>
+<p>Please create your account to get started. This account will automatically be an admin.</p>
+{% if error %}<p style="color: red; text-align: center;">{{ error }}</p>{% endif %}
+<form method="post">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="text" name="photo_dir" placeholder="Photo Directory Path (e.g., C:/Users/John/Photos)" required>
+    <input type="text" name="video_dir" placeholder="Video Directory Path (e.g., C:/Users/John/Videos)" required>
+    <button type="submit">Create Admin Account</button>
+</form>
+{% endblock %}

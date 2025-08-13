@@ -1,0 +1,4 @@
+selfly/database.db
+selfly/__pycache__/database.cpython-313.pyc
+selfly/__pycache__/routes.cpython-313.pyc
+selfly/.gitignore

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}API Documentation{% endblock %}
+
+{% block content %}
+<h2>API Documentation</h2>
+<p>This is a basic API documentation page. In a real application, you would use a tool like Swagger or OpenAPI.</p>
+<h3>Endpoints</h3>
+<ul>
+    <li><b>GET /api/v1/files</b> - Get a list of all files uploaded by the current user.</li>
+    <li><b>GET /api/v1/files/&lt;filename&gt;</b> - Get metadata for a specific file.</li>
+    <li><b>POST /api/v1/upload</b> - Upload a new file. Requires authentication.</li>
+</ul>
+{% endblock %}
