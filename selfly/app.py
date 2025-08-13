@@ -5,7 +5,7 @@ from database import init_db
 
 # --- Flask App Initialization ---
 app = Flask(__name__)
-app.secret_key = 'your_super_secret_key' # Change this to a random, complex string
+app.secret_key = 'changethistoasuperlongcomplexstringpleaseunlessitsalreadyonelol' # Change this to a random, complex string
 
 # Define allowed file extensions for uploads
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif', 'mp4', 'mov', 'avi'}
@@ -18,4 +18,4 @@ init_db()
 
 # --- Entry Point for the Application ---
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=False, port=8000)
