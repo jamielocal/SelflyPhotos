@@ -10,7 +10,7 @@ To deploy this project run
 
 **Windows**
 
-``curl -o install.bat https://rb.gy/hdoegr && install.bat
+``curl -o install.bat https://raw.githubusercontent.com/jamielocal/SelflyPhotos/refs/heads/master/scr/install.sh && install.bat
 ``
 
 **Linux** 
