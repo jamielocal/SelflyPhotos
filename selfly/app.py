@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = 'changethistoasuperlongcomplexstringpleaseunlessitsalreadyonelol' # Change this to a random, complex string
 
 # Define allowed file extensions for uploads
-app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif', 'mp4', 'mov', 'avi'}
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'webp', 'jpg', 'jpeg', 'gif', 'mp4', 'mov', 'avi'}
 
 # Register the blueprint
 app.register_blueprint(main_bp)
