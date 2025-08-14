@@ -40,15 +40,8 @@ To deploy this project run
 
 ## Roadmap
 
-- Better Browser Support (In Older Browsers)
-
-- Optimize Alot more
-
-- Add More Features
- 
-- Photo Tagging
-
-- Move Roadmap to Trello / Similar
+[View Roadmap](https://kan.bn/boards/dikrchuxm5pj)
+~ hosted via [kan.bn](https://kan.bn)
 
 
 ## FAQ
